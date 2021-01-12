@@ -1,0 +1,22 @@
+dubbo:
+    scan:
+        base-packages: com.study.wzf.orderprovider.service
+    application:
+        name: myorder-service
+        owner: wzf
+    protocol:
+        port: 20881
+        name: dubbo
+    #host:
+    registry:
+        address: zookeeper://172.16.2.106:2181?172.16.2.182:2181,172.16.2.98:2181
+        timeout: 50000
+        check: true
+        simplified: true
+        group: mydubbo-dev
+    metadata-report:
+        address: zookeeper://172.16.2.106:2181?172.16.2.182:2181,172.16.2.98:2181
+        cycle-report: false
+        retry-times: 30
+        group: mydubbo-dev
+

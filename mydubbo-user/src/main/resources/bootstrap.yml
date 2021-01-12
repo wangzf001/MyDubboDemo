@@ -1,0 +1,10 @@
+#nacos\u914D\u7F6E
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 172.16.2.106:8848
+        prefix: example-config
+        file-extension: properties
+        namespace: a712a034-40bd-420a-a88a-26cf784cdc94
+        group: TEST_GROUP

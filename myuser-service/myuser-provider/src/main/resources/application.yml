@@ -1,3 +1,25 @@
+spring:
+    datasource:
+      url: jdbc:mysql://mysql.gpmall.com:3306/gpmall?useUnicode=true&characterEncoding=utf8&useOldAliasMetadataBehavior=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=UTC
+      username: root
+      password: root
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      type: com.alibaba.druid.pool.DruidDataSource
+      initialSize: 2
+      minIdle: 1
+      maxActive: 20
+      maxWait: 60000
+      timeBetweenEvictionRunsMillis: 300000
+      validationQuery: SELECT 1 FROM DUAL
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: false
+      maxPoolPreparedStatementPerConnectionSize: 20
+      filters: stat,config
+      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+      useGlobalDataSourceStat: true
+
 dubbo:
   scan:
     base-packages: com.study.wzf.myuserprovider.service
@@ -9,14 +31,14 @@ dubbo:
     name: dubbo
     #host:
   registry:
-    address: zookeeper://172.16.2.106:2181
+    address: zookeeper://172.16.2.106:2181?172.16.2.182:2181,172.16.2.98:2181
     timeout: 50000
     check: true
     simplified: true
     group: mydubbo-dev
   metadata-report:
-    address: zookeeper://172.16.2.106:2181
+    address: zookeeper://172.16.2.106:2181?172.16.2.182:2181,172.16.2.98:2181
     cycle-report: false
     retry-times: 30
-    group: mydobbo-dev
+    group: mydubbo-dev
 
