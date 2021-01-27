@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.wzf.myuserprovider.dal.persistence.WfMemberMapper">
+  <resultMap id="BaseResultMap" type="com.study.wzf.myuserprovider.dal.entity.WfMember">
+    <id column="userId" jdbcType="INTEGER" property="userid" />
+    <result column="userName" jdbcType="VARCHAR" property="username" />
+    <result column="telephone" jdbcType="CHAR" property="telephone" />
+    <result column="identity" jdbcType="VARCHAR" property="identity" />
+    <result column="userPassword" jdbcType="VARCHAR" property="userpassword" />
+    <result column="userUuidSalt" jdbcType="VARCHAR" property="useruuidsalt" />
+    <result column="twoDimensionCode" jdbcType="VARCHAR" property="twodimensioncode" />
+    <result column="userSource" jdbcType="VARCHAR" property="usersource" />
+    <result column="headImage" jdbcType="VARCHAR" property="headimage" />
+    <result column="thumbimg" jdbcType="VARCHAR" property="thumbimg" />
+    <result column="status" jdbcType="BIT" property="status" />
+    <result column="inviteCode" jdbcType="VARCHAR" property="invitecode" />
+    <result column="blackFlag" jdbcType="BIT" property="blackflag" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updatetime" />
+    <result column="wxHeadImage" jdbcType="VARCHAR" property="wxheadimage" />
+    <result column="wxOpenId" jdbcType="VARCHAR" property="wxopenid" />
+    <result column="wxNikeName" jdbcType="VARCHAR" property="wxnikename" />
+    <result column="studyTime" jdbcType="INTEGER" property="studytime" />
+    <result column="studyDays" jdbcType="INTEGER" property="studydays" />
+    <result column="vipType" jdbcType="TINYINT" property="viptype" />
+    <result column="vipStartTime" jdbcType="TIMESTAMP" property="vipstarttime" />
+    <result column="vipEndTime" jdbcType="TIMESTAMP" property="vipendtime" />
+    <result column="vipCardNum" jdbcType="INTEGER" property="vipcardnum" />
+    <result column="chapterCardNum" jdbcType="INTEGER" property="chaptercardnum" />
+    <result column="teacherId" jdbcType="INTEGER" property="teacherid" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="score" jdbcType="INTEGER" property="score" />
+    <result column="appleId" jdbcType="VARCHAR" property="appleid" />
+    <result column="isLive" jdbcType="TINYINT" property="islive" />
+    <result column="smallOpenId" jdbcType="VARCHAR" property="smallopenid" />
+    <result column="bookmark" jdbcType="INTEGER" property="bookmark" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from wzf_member
+    where userId = #{userid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.study.wzf.myuserprovider.dal.entity.WfMember">
+    insert into wzf_member (userId, userName, telephone, 
+      identity, userPassword, userUuidSalt, 
+      twoDimensionCode, userSource, headImage, 
+      thumbimg, status, inviteCode, 
+      blackFlag, createTime, updateTime, 
+      wxHeadImage, wxOpenId, wxNikeName, 
+      studyTime, studyDays, vipType, 
+      vipStartTime, vipEndTime, vipCardNum, 
+      chapterCardNum, teacherId, remark, 
+      score, appleId, isLive, 
+      smallOpenId, bookmark)
+    values (#{userid,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{telephone,jdbcType=CHAR}, 
+      #{identity,jdbcType=VARCHAR}, #{userpassword,jdbcType=VARCHAR}, #{useruuidsalt,jdbcType=VARCHAR}, 
+      #{twodimensioncode,jdbcType=VARCHAR}, #{usersource,jdbcType=VARCHAR}, #{headimage,jdbcType=VARCHAR}, 
+      #{thumbimg,jdbcType=VARCHAR}, #{status,jdbcType=BIT}, #{invitecode,jdbcType=VARCHAR}, 
+      #{blackflag,jdbcType=BIT}, #{createtime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP}, 
+      #{wxheadimage,jdbcType=VARCHAR}, #{wxopenid,jdbcType=VARCHAR}, #{wxnikename,jdbcType=VARCHAR}, 
+      #{studytime,jdbcType=INTEGER}, #{studydays,jdbcType=INTEGER}, #{viptype,jdbcType=TINYINT}, 
+      #{vipstarttime,jdbcType=TIMESTAMP}, #{vipendtime,jdbcType=TIMESTAMP}, #{vipcardnum,jdbcType=INTEGER}, 
+      #{chaptercardnum,jdbcType=INTEGER}, #{teacherid,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, 
+      #{score,jdbcType=INTEGER}, #{appleid,jdbcType=VARCHAR}, #{islive,jdbcType=TINYINT}, 
+      #{smallopenid,jdbcType=VARCHAR}, #{bookmark,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.study.wzf.myuserprovider.dal.entity.WfMember">
+    update wzf_member
+    set userName = #{username,jdbcType=VARCHAR},
+      telephone = #{telephone,jdbcType=CHAR},
+      identity = #{identity,jdbcType=VARCHAR},
+      userPassword = #{userpassword,jdbcType=VARCHAR},
+      userUuidSalt = #{useruuidsalt,jdbcType=VARCHAR},
+      twoDimensionCode = #{twodimensioncode,jdbcType=VARCHAR},
+      userSource = #{usersource,jdbcType=VARCHAR},
+      headImage = #{headimage,jdbcType=VARCHAR},
+      thumbimg = #{thumbimg,jdbcType=VARCHAR},
+      status = #{status,jdbcType=BIT},
+      inviteCode = #{invitecode,jdbcType=VARCHAR},
+      blackFlag = #{blackflag,jdbcType=BIT},
+      createTime = #{createtime,jdbcType=TIMESTAMP},
+      updateTime = #{updatetime,jdbcType=TIMESTAMP},
+      wxHeadImage = #{wxheadimage,jdbcType=VARCHAR},
+      wxOpenId = #{wxopenid,jdbcType=VARCHAR},
+      wxNikeName = #{wxnikename,jdbcType=VARCHAR},
+      studyTime = #{studytime,jdbcType=INTEGER},
+      studyDays = #{studydays,jdbcType=INTEGER},
+      vipType = #{viptype,jdbcType=TINYINT},
+      vipStartTime = #{vipstarttime,jdbcType=TIMESTAMP},
+      vipEndTime = #{vipendtime,jdbcType=TIMESTAMP},
+      vipCardNum = #{vipcardnum,jdbcType=INTEGER},
+      chapterCardNum = #{chaptercardnum,jdbcType=INTEGER},
+      teacherId = #{teacherid,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      score = #{score,jdbcType=INTEGER},
+      appleId = #{appleid,jdbcType=VARCHAR},
+      isLive = #{islive,jdbcType=TINYINT},
+      smallOpenId = #{smallopenid,jdbcType=VARCHAR},
+      bookmark = #{bookmark,jdbcType=INTEGER}
+    where userId = #{userid,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select userId, userName, telephone, identity, userPassword, userUuidSalt, twoDimensionCode, 
+    userSource, headImage, thumbimg, status, inviteCode, blackFlag, createTime, updateTime, 
+    wxHeadImage, wxOpenId, wxNikeName, studyTime, studyDays, vipType, vipStartTime, vipEndTime, 
+    vipCardNum, chapterCardNum, teacherId, remark, score, appleId, isLive, smallOpenId, 
+    bookmark
+    from wzf_member
+    where userId = #{userid,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select userId, userName, telephone, identity, userPassword, userUuidSalt, twoDimensionCode, 
+    userSource, headImage, thumbimg, status, inviteCode, blackFlag, createTime, updateTime, 
+    wxHeadImage, wxOpenId, wxNikeName, studyTime, studyDays, vipType, vipStartTime, vipEndTime, 
+    vipCardNum, chapterCardNum, teacherId, remark, score, appleId, isLive, smallOpenId, 
+    bookmark
+    from wzf_member
+  </select>
+</mapper>
